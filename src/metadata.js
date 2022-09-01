@@ -14,7 +14,7 @@ ipfsArray.push({
     attributes: [
       { trait_type: "Series", value: "Genesis" },
       { trait_type: "Level", value: "1" },
-      { display_type: "Booster", trait_type: "Speed", value: "100%" },
+      { display_type: "Booster", trait_type: "Speed", value: "100" },
     ],
   },
 });
@@ -30,7 +30,7 @@ ipfsArray.push({
     attributes: [
       { trait_type: "Series", value: "Genesis" },
       { trait_type: "Level", value: "1" },
-      { display_type: "Booster", trait_type: "Time", value: "60s" },
+      { display_type: "Booster", trait_type: "Time", value: "60" },
     ],
   },
 });
@@ -46,7 +46,7 @@ ipfsArray.push({
     attributes: [
       { trait_type: "Series", value: "Genesis" },
       { trait_type: "Level", value: "1" },
-      { display_type: "Booster", trait_type: "Jump", value: "100%" },
+      { display_type: "Booster", trait_type: "Jump", value: "100" },
     ],
   },
 });

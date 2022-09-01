@@ -9,17 +9,29 @@ contract NFT is ERC1155 {
     uint256 private constant TIME = 2;
     uint256 private constant JUMP = 3;
 
+    address private admin;
+
     constructor(address _recipient)
         ERC1155("ipfs://QmerxAzTUKJYz8ghuAuMmRBiZRZ7xeSQ5ePrmLAkR69bDo/metadata/{id}.json")
     {
+        admin = _recipient;
         _mint(_recipient, SPEED, 10, "");
         _mint(_recipient, TIME, 10, "");
         _mint(_recipient, JUMP, 10, "");
     }
 
     function mint(uint256 perks, address recipient) public {
+        // require(msg.sender == admin, "Not authorized");
         uint256 tokenId = _getPerks(perks);
         _mint(recipient, tokenId, 1, "");
+    }
+
+    /* Restricted functions:
+     ************************/
+
+    function setNewAdmin(address _newAdmin) external {
+        require(msg.sender == admin, "Not authorized");
+        admin = _newAdmin;
     }
 
     /* Private functions:

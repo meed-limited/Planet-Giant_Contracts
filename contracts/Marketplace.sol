@@ -1,20 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.16;
 
-import "./utils/Counters.sol";
 import "./ERC1155/IERC1155.sol";
+import "./ERC1155/ERC1155Holder.sol";
+import "./utils/Counters.sol";
+import "./utils/Ownable.sol";
 import "./utils/ReentrancyGuard.sol";
 
-contract Marketplace is ReentrancyGuard {
+contract Marketplace is ERC1155Holder, Ownable, ReentrancyGuard {
     using Counters for Counters.Counter;
     Counters.Counter private _itemIds;
     Counters.Counter private _itemsSold;
-
-    address public owner;
-
-    constructor() {
-        owner = msg.sender;
-    }
 
     struct MarketItem {
         uint256 itemId;
@@ -45,43 +41,36 @@ contract Marketplace is ReentrancyGuard {
         address nftContract,
         uint256 tokenId,
         uint256 price
-    ) public payable nonReentrant {
+    ) external nonReentrant {
         require(price > 0, "Marketplace: price too low");
-
-        _itemIds.increment();
-        uint256 itemId = _itemIds.current();
-
-        idToMarketItem[itemId] = MarketItem(
-            itemId,
-            nftContract,
-            tokenId,
-            payable(msg.sender),
-            payable(address(0)),
-            price,
-            false
-        );
-
-        IERC1155(nftContract).safeTransferFrom(msg.sender, address(this), tokenId, 1, "");
-
-        emit MarketItemCreated(itemId, nftContract, tokenId, msg.sender, address(0), price, false);
+        _createMarketItem(nftContract, tokenId, price);
     }
 
-    function createMarketSale(address nftContract, uint256 itemId) public payable nonReentrant {
+    function createMarketSale(address nftContract, uint256 itemId) external payable nonReentrant {
         uint256 price = idToMarketItem[itemId].price;
         uint256 tokenId = idToMarketItem[itemId].tokenId;
         bool sold = idToMarketItem[itemId].sold;
         require(msg.value == price, "Marketplace: wrong amount");
         require(!sold, "Marketplace: sale alredy over");
-        emit MarketItemSold(itemId, msg.sender);
 
         idToMarketItem[itemId].owner = payable(msg.sender);
         _itemsSold.increment();
         idToMarketItem[itemId].sold = true;
         idToMarketItem[itemId].seller.transfer(msg.value);
         IERC1155(nftContract).safeTransferFrom(address(this), msg.sender, tokenId, 1, "");
+        emit MarketItemSold(itemId, msg.sender);
     }
 
-    function fetchMarketItems() public view returns (MarketItem[] memory) {
+    function cancelSale(uint256 itemId) external nonReentrant {
+        require(msg.sender == idToMarketItem[itemId].seller, "Marketplace: not owner");
+        require(!idToMarketItem[itemId].sold, "Marketplace: item already sold");
+        _cancelSale(itemId);
+    }
+
+    /* View:
+     *********/
+
+    function fetchMarketItems() external view returns (MarketItem[] memory) {
         uint256 itemCount = _itemIds.current();
         uint256 unsoldItemCount = _itemIds.current() - _itemsSold.current();
         uint256 currentIndex = 0;
@@ -98,9 +87,32 @@ contract Marketplace is ReentrancyGuard {
         return items;
     }
 
-    function cancelSale(uint256 itemId) public nonReentrant {
-        require(msg.sender == idToMarketItem[itemId].seller, "Marketplace: not owner");
-        require(!idToMarketItem[itemId].sold, "Marketplace: item already sold");
+    /* Private:
+     ************/
+
+    function _createMarketItem(
+        address nftContract,
+        uint256 tokenId,
+        uint256 price
+    ) private {
+        _itemIds.increment();
+        uint256 itemId = _itemIds.current();
+
+        idToMarketItem[itemId] = MarketItem(
+            itemId,
+            nftContract,
+            tokenId,
+            payable(msg.sender),
+            payable(address(0)),
+            price,
+            false
+        );
+
+        IERC1155(nftContract).safeTransferFrom(msg.sender, address(this), tokenId, 1, "");
+        emit MarketItemCreated(itemId, nftContract, tokenId, msg.sender, address(0), price, false);
+    }
+
+    function _cancelSale(uint256 itemId) private {
         IERC1155(idToMarketItem[itemId].nftContract).safeTransferFrom(
             address(this),
             msg.sender,
