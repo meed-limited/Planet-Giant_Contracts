@@ -5,7 +5,7 @@ let ipfsArray = [];
 let promises = [];
 
 // Image 1 = Run Faster
-let paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + (1).toString(16)).substr("-64");
+let paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + (11).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/1.png`, (err, data) => {
@@ -20,7 +20,7 @@ promises.push(
 );
 
 // Image 2 = Extra time
-let paddedHex2 = ("0000000000000000000000000000000000000000000000000000000000000000" + (2).toString(16)).substr("-64");
+let paddedHex2 = ("0000000000000000000000000000000000000000000000000000000000000000" + (12).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/2.png`, (err, data) => {
@@ -35,7 +35,7 @@ promises.push(
 );
 
 // Image 3 = Jump Higher
-let paddedHex3 = ("0000000000000000000000000000000000000000000000000000000000000000" + (3).toString(16)).substr("-64");
+let paddedHex3 = ("0000000000000000000000000000000000000000000000000000000000000000" + (13).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/3.png`, (err, data) => {

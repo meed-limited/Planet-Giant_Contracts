@@ -21,7 +21,7 @@
     "size": "hardhat size-contracts",
     "doc": "hardhat docgen",
     "cover": "hardhat coverage",
-    "slither": "slither ./contracts --exclude naming-convention,external-function,low-level-calls --buidler-ignore-compile"
+    "slither": "slither ./contracts --exclude low-level-calls --buidler-ignore-compile"
   },
   "devDependencies": {
     "@cronos-labs/hardhat-cronoscan": "^0.0.4",
