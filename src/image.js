@@ -5,14 +5,13 @@ require("dotenv").config({
 });
 
 const xAPI_Key = `${process.env.X_API_KEY}`;
+const padHexBase = "0000000000000000000000000000000000000000000000000000000000000000";
 
 let ipfsArray = [];
 let promises = [];
 
 // Image 11 = Run Faster I
-let paddedHex11 = ("0000000000000000000000000000000000000000000000000000000000000000" + (11).toString(16)).substr(
-  "-64"
-);
+let paddedHex11 = (padHexBase + (11).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/11.png`, (err, data) => {
@@ -27,9 +26,7 @@ promises.push(
 );
 
 // Image 12 = Extra time I
-let paddedHex12 = ("0000000000000000000000000000000000000000000000000000000000000000" + (12).toString(16)).substr(
-  "-64"
-);
+let paddedHex12 = (padHexBase + (12).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/12.png`, (err, data) => {
@@ -44,9 +41,7 @@ promises.push(
 );
 
 // Image 13 = Jump Higher I
-let paddedHex13 = ("0000000000000000000000000000000000000000000000000000000000000000" + (13).toString(16)).substr(
-  "-64"
-);
+let paddedHex13 = (padHexBase + (13).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/13.png`, (err, data) => {
@@ -61,9 +56,7 @@ promises.push(
 );
 
 // Image 21 = Run Faster II
-let paddedHex21 = ("0000000000000000000000000000000000000000000000000000000000000000" + (11).toString(16)).substr(
-  "-64"
-);
+let paddedHex21 = (padHexBase + (21).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/21.png`, (err, data) => {
@@ -78,9 +71,7 @@ promises.push(
 );
 
 // Image 22 = Extra time II
-let paddedHex22 = ("0000000000000000000000000000000000000000000000000000000000000000" + (12).toString(16)).substr(
-  "-64"
-);
+let paddedHex22 = (padHexBase + (22).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/22.png`, (err, data) => {
@@ -95,9 +86,7 @@ promises.push(
 );
 
 // Image 23 = Jump Higher II
-let paddedHex23 = ("0000000000000000000000000000000000000000000000000000000000000000" + (13).toString(16)).substr(
-  "-64"
-);
+let paddedHex23 = (padHexBase + (23).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/23.png`, (err, data) => {
@@ -112,9 +101,7 @@ promises.push(
 );
 
 // Image 31 = Run Faster III
-let paddedHex31 = ("0000000000000000000000000000000000000000000000000000000000000000" + (11).toString(16)).substr(
-  "-64"
-);
+let paddedHex31 = (padHexBase + (31).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/31.png`, (err, data) => {
@@ -129,9 +116,7 @@ promises.push(
 );
 
 // Image 32 = Extra time III
-let paddedHex32 = ("0000000000000000000000000000000000000000000000000000000000000000" + (12).toString(16)).substr(
-  "-64"
-);
+let paddedHex32 = (padHexBase + (32).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/32.png`, (err, data) => {
@@ -146,9 +131,7 @@ promises.push(
 );
 
 // Image 33 = Jump Higher III
-let paddedHex33 = ("0000000000000000000000000000000000000000000000000000000000000000" + (13).toString(16)).substr(
-  "-64"
-);
+let paddedHex33 = (padHexBase + (33).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
     fs.readFile(`${__dirname}/image/33.png`, (err, data) => {

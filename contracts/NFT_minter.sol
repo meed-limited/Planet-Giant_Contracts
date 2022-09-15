@@ -34,7 +34,7 @@ contract NFT is ERC1155, Ownable {
     @param _amount Amount of each NFTs to be minted to the recipient;
     */
     constructor(address _recipient, uint256 _amount)
-        ERC1155("ipfs://QmWdExuFrZtsxBbbK289uJe9GfHM21Jmh1jQpSP6pSJhji/metadata/{id}.json")
+        ERC1155("ipfs://QmYsP4uGK1pdDNF7Hnse8vLxKGRojDCa9GtCKpAwKxuYSr/metadata/{id}.json")
     {
         _mint(_recipient, SPEED_2, _amount, "");
         _mint(_recipient, TIME_2, _amount, "");

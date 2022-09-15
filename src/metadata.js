@@ -8,11 +8,6 @@ const padHexBase = "000000000000000000000000000000000000000000000000000000000000
 
 let ipfsArray = [];
 
-// Hex for Image
-// const paddedHex1 = (padHexBase + (1).toString(16)).substr("-64");
-// const paddedHex2 = (padHexBase + (2).toString(16)).substr("-64");
-// const paddedHex3 = (padHexBase + (3).toString(16)).substr("-64");
-
 // Hex for Path
 const paddedHex11 = (padHexBase + (11).toString(16)).substr("-64");
 const paddedHex12 = (padHexBase + (12).toString(16)).substr("-64");
@@ -28,7 +23,7 @@ const paddedHex33 = (padHexBase + (33).toString(16)).substr("-64");
 ipfsArray.push({
   path: `metadata/${paddedHex11}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex11}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex11}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -43,7 +38,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex12}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex12}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex12}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -58,7 +53,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex13}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex13}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex13}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -73,7 +68,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex21}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex21}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex21}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -88,7 +83,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex22}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex22}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex22}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -103,7 +98,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex23}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex23}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex23}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -118,7 +113,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex31}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex31}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex31}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -133,7 +128,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex32}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex32}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex32}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -148,7 +143,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex33}.json`,
   content: {
-    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex33}.png`,
+    image: `ipfs://QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/${paddedHex33}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -174,5 +169,5 @@ axios
     console.log(error);
   });
 
-//image: https://ipfs.moralis.io:2053/ipfs/QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/000000000000000000000000000000000000000000000000000000000000000c.png
-//metadata: https://ipfs.moralis.io:2053/ipfs/QmS7iwpALVv9Xurko4rStWzcr1gGHJTSS8LftikowXwwXt/metadata/0000000000000000000000000000000000000000000000000000000000000015.json
+//image: https://ipfs.moralis.io:2053/ipfs/QmS383B2NkZdUxtuU1Kn9fLkff8Vo2GZT9hJmTsvWfLANF/images/000000000000000000000000000000000000000000000000000000000000000c.png
+//metadata: https://ipfs.moralis.io:2053/ipfs/QmYsP4uGK1pdDNF7Hnse8vLxKGRojDCa9GtCKpAwKxuYSr/metadata/0000000000000000000000000000000000000000000000000000000000000015.json

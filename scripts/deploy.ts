@@ -1,5 +1,8 @@
 import hre, { ethers } from "hardhat";
 import fs from "fs";
+require("dotenv").config({
+  path: "../.env",
+});
 
 const recipient = `${process.env.RECIPIENT}`;
 const amount = 5;
