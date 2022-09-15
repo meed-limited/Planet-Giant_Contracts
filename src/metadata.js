@@ -1,4 +1,7 @@
-import { post } from "axios";
+let axios = require("axios");
+require("dotenv").config({
+  path: "../.env",
+});
 
 const xAPI_Key = `${process.env.X_API_KEY}`;
 const padHexBase = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -6,9 +9,9 @@ const padHexBase = "000000000000000000000000000000000000000000000000000000000000
 let ipfsArray = [];
 
 // Hex for Image
-const paddedHex1 = (padHexBase + (1).toString(16)).substr("-64");
-const paddedHex2 = (padHexBase + (2).toString(16)).substr("-64");
-const paddedHex3 = (padHexBase + (3).toString(16)).substr("-64");
+// const paddedHex1 = (padHexBase + (1).toString(16)).substr("-64");
+// const paddedHex2 = (padHexBase + (2).toString(16)).substr("-64");
+// const paddedHex3 = (padHexBase + (3).toString(16)).substr("-64");
 
 // Hex for Path
 const paddedHex11 = (padHexBase + (11).toString(16)).substr("-64");
@@ -25,7 +28,7 @@ const paddedHex33 = (padHexBase + (33).toString(16)).substr("-64");
 ipfsArray.push({
   path: `metadata/${paddedHex11}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex1}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex11}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -40,7 +43,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex12}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex2}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex12}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -55,7 +58,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex13}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex3}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex13}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -70,7 +73,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex21}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex1}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex21}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -85,7 +88,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex22}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex2}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex22}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -100,7 +103,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex23}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex3}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex23}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -115,7 +118,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex31}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex1}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex31}.png`,
     name: `Run Faster`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -130,7 +133,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex32}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex2}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex32}.png`,
     name: `Extra time`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -145,7 +148,7 @@ ipfsArray.push({
 ipfsArray.push({
   path: `metadata/${paddedHex33}.json`,
   content: {
-    image: `ipfs://QmZAVihCcT97B7kzWFjMXmgqqGpoooDbN1kCABAGRmEFte/images/${paddedHex3}.png`,
+    image: `ipfs://QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/${paddedHex33}.png`,
     name: `Jump Higher`,
     description: "Planet Giant - Cronos Hackathon",
     attributes: [
@@ -156,13 +159,14 @@ ipfsArray.push({
   },
 });
 
-post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
-  headers: {
-    "X-API-KEY": xAPI_Key,
-    "Content-Type": "application/json",
-    accept: "application/json",
-  },
-})
+axios
+  .post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
+    headers: {
+      "X-API-KEY": xAPI_Key,
+      "Content-Type": "application/json",
+      accept: "application/json",
+    },
+  })
   .then((res) => {
     console.log(res.data);
   })
@@ -170,4 +174,5 @@ post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
     console.log(error);
   });
 
-// https://ipfs.moralis.io:2053/ipfs/QmWdExuFrZtsxBbbK289uJe9GfHM21Jmh1jQpSP6pSJhji/metadata/0000000000000000000000000000000000000000000000000000000000000015.json
+//image: https://ipfs.moralis.io:2053/ipfs/QmTptwAuVwVZVYWtthCCLWLNKshzUsSC9KaNJQpCiL4MLB/images/000000000000000000000000000000000000000000000000000000000000000c.png
+//metadata: https://ipfs.moralis.io:2053/ipfs/QmS7iwpALVv9Xurko4rStWzcr1gGHJTSS8LftikowXwwXt/metadata/0000000000000000000000000000000000000000000000000000000000000015.json
