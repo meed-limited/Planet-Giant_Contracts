@@ -171,4 +171,4 @@ axios
     console.log(error);
   });
 
-//'https://ipfs.moralis.io:2053/ipfs/QmX1xfbKoUEHtnoiVY9uEtH3X6YuJx2yzPg6ggp3zrFUzz/images/0000000000000000000000000000000000000000000000000000000000000063.png'
+// https://ipfs.moralis.io:2053/ipfs/QmWdExuFrZtsxBbbK289uJe9GfHM21Jmh1jQpSP6pSJhji/metadata/0000000000000000000000000000000000000000000000000000000000000015.json
