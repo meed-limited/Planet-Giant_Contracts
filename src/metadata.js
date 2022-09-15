@@ -1,9 +1,9 @@
-let fs = require("fs");
-let axios = require("axios");
+import { post } from "axios";
+
+const xAPI_Key = `${process.env.X_API_KEY}`;
+const padHexBase = "0000000000000000000000000000000000000000000000000000000000000000";
 
 let ipfsArray = [];
-
-const padHexBase = "0000000000000000000000000000000000000000000000000000000000000000";
 
 // Hex for Image
 const paddedHex1 = (padHexBase + (1).toString(16)).substr("-64");
@@ -156,14 +156,13 @@ ipfsArray.push({
   },
 });
 
-axios
-  .post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
-    headers: {
-      "X-API-KEY": "REtwfgnP81YBSFRpqrXiTdoqyFXXLC4jubxYUq9QYIPCXvirTuDk6iulYQ6GN88G",
-      "Content-Type": "application/json",
-      accept: "application/json",
-    },
-  })
+post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
+  headers: {
+    "X-API-KEY": xAPI_Key,
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
+})
   .then((res) => {
     console.log(res.data);
   })

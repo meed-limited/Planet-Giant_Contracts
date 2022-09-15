@@ -1,5 +1,7 @@
-let fs = require("fs");
-let axios = require("axios");
+import { readFile } from "fs";
+import { post } from "axios";
+
+const xAPI_Key = `${process.env.X_API_KEY}`;
 
 let ipfsArray = [];
 let promises = [];
@@ -8,7 +10,7 @@ let promises = [];
 let paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + (11).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
-    fs.readFile(`${__dirname}/image/1.png`, (err, data) => {
+    readFile(`${__dirname}/image/1.png`, (err, data) => {
       if (err) rej();
       ipfsArray.push({
         path: `images/${paddedHex}.png`,
@@ -23,7 +25,7 @@ promises.push(
 let paddedHex2 = ("0000000000000000000000000000000000000000000000000000000000000000" + (12).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
-    fs.readFile(`${__dirname}/image/2.png`, (err, data) => {
+    readFile(`${__dirname}/image/2.png`, (err, data) => {
       if (err) rej();
       ipfsArray.push({
         path: `images/${paddedHex2}.png`,
@@ -38,7 +40,7 @@ promises.push(
 let paddedHex3 = ("0000000000000000000000000000000000000000000000000000000000000000" + (13).toString(16)).substr("-64");
 promises.push(
   new Promise((res, rej) => {
-    fs.readFile(`${__dirname}/image/3.png`, (err, data) => {
+    readFile(`${__dirname}/image/3.png`, (err, data) => {
       if (err) rej();
       ipfsArray.push({
         path: `images/${paddedHex3}.png`,
@@ -50,17 +52,16 @@ promises.push(
 );
 
 Promise.all(promises).then(() => {
-  axios
-    .post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
-      headers: {
-        "X-API-KEY": "REtwfgnP81YBSFRpqrXiTdoqyFXXLC4jubxYUq9QYIPCXvirTuDk6iulYQ6GN88G",
-        "Content-Type": "application/json",
-        accept: "application/json",
-      },
-      maxContentLength: Infinity,
-      maxBodyLength: Infinity,
-      maxRedirects: Infinity,
-    })
+  post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
+    headers: {
+      "X-API-KEY": xAPI_Key,
+      "Content-Type": "application/json",
+      accept: "application/json",
+    },
+    maxContentLength: Infinity,
+    maxBodyLength: Infinity,
+    maxRedirects: Infinity,
+  })
     .then((res) => {
       console.log(res.data);
     })

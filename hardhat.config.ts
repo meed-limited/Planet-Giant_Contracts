@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { HardhatUserConfig } from "hardhat/config";
-import '@typechain/hardhat'
+// import { HardhatUserConfig } from "hardhat/config";
+import "@typechain/hardhat";
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-ethers";
 import "@nomicfoundation/hardhat-toolbox";
@@ -80,19 +80,19 @@ const config = {
         chainId: 25,
         urls: {
           apiURL: "https://api.cronoscan.com/api",
-          browserURL: "https://cronoscan.com/"
-        }
+          browserURL: "https://cronoscan.com/",
+        },
       },
       {
         network: "cosmos_test",
         chainId: 338,
         urls: {
           apiURL: "https://api.cronoscan.com/api",
-          browserURL: "https://testnet.cronoscan.com/"
-        }
-      }
-    ]
-  }
+          browserURL: "https://testnet.cronoscan.com/",
+        },
+      },
+    ],
+  },
 };
 
 export default config;

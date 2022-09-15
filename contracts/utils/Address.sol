@@ -61,7 +61,7 @@ library Address {
         require(address(this).balance >= amount, "Address: insufficient balance");
 
         (bool success, ) = recipient.call{value: amount}("");
-        require(success, "Address: unable to send value, recipient may have reverted");
+        require(success, "Address: can't send value.");
     }
 
     /**
@@ -131,7 +131,7 @@ library Address {
         uint256 value,
         string memory errorMessage
     ) internal returns (bytes memory) {
-        require(address(this).balance >= value, "Address: insufficient balance for call");
+        require(address(this).balance >= value, "Address: insufficient balance");
         (bool success, bytes memory returndata) = target.call{value: value}(data);
         return verifyCallResultFromTarget(target, success, returndata, errorMessage);
     }
