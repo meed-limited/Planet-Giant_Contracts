@@ -4,9 +4,9 @@
 <h2>Cronos & Moralis Hackathon - 09/2022</h2>
 <br></br>
 
-[![Stargazers](https://img.shields.io/github/stars/shamrockstudios/Planet-Giant_Webapp)](https://github.com/shamrockstudios/Planet-Giant_Webapp/stargazers)
-[![Issues](https://img.shields.io/github/issues/shamrockstudios/Planet-Giant_Webapp)](https://github.com/shamrockstudios/Planet-Giant_Webapp/issues)
-[![MIT License](https://img.shields.io/github/license/shamrockstudios/Planet-Giant_Webapp)](https://github.com/shamrockstudios/Planet-Giant_Webapp/blob/main/License)
+[![Stargazers](https://img.shields.io/github/stars/shamrockstudios/Planet-Giant_Contracts)](https://github.com/shamrockstudios/Planet-Giant_Contracts/stargazers)
+[![Issues](https://img.shields.io/github/issues/shamrockstudios/Planet-Giant_Contracts)](https://github.com/shamrockstudios/Planet-Giant_Contracts/issues)
+[![MIT License](https://img.shields.io/github/license/shamrockstudios/Planet-Giant_Contracts)](https://github.com/shamrockstudios/Planet-Giant_Contracts/blob/main/License)
 
 <br></br>
 
@@ -18,10 +18,10 @@
 
 This backend has been built with the game Planet-Giant for the Cronos & Moralis Hackathon - August-September 2022.
 
-Link to all github repos:
+The entire project is divided in 3 parts. Here are the links to all the different github repos:
 
 - Unity Game: https://github.com/shamrockstudios/Planet-Giant_Game
-- React Webapp: https://github.com/shamrockstudios/Planet-Giant_Webapp
+- React Webapp: https://github.com/shamrockstudios/Planet-Giant_Contracts
 - Backend contracts: https://github.com/shamrockstudios/Planet-Giant_Contracts
 
 ## Description
