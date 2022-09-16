@@ -14,6 +14,9 @@
 
 </div>
 
+- NFT smart-contract: https://testnet.cronoscan.com/address/0x8208Bb3a2e25310BAd343fD80968F061F23a707B#code
+- Marketplace smart-contract: https://testnet.cronoscan.com/address/0xd5A32E3fb8cBeacbd10E51172067A5AEf02Ef5D6#code
+
 ## Note
 
 This backend has been built with the game Planet-Giant for the Cronos & Moralis Hackathon - August-September 2022.
