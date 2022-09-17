@@ -24,7 +24,7 @@ This backend has been built with the game Planet-Giant for the Cronos & Moralis 
 The entire project is divided in 3 parts. Here are the links to all the different github repos:
 
 - Unity Game: https://github.com/shamrockstudios/Planet-Giant_Game
-- React Webapp: https://github.com/shamrockstudios/Planet-Giant_Contracts
+- React Webapp: https://github.com/shamrockstudios/Planet-Giant_Webapp
 - Backend contracts: https://github.com/shamrockstudios/Planet-Giant_Contracts
 
 ## Description
